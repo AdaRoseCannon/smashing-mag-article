@@ -211,22 +211,24 @@
         <p>One can reveal the details of this by requesting push notification permission.</p>
 
 		<pre><code class="language-javascript">
-			serviceWorkerRegistration
-
-			.pushManager
-			.subscribe({
-				// Required parameter as receiving updates but not displaying a message is not supported everywhere.
-				userVisibleOnly: true
-			})
-			.then(function(subscription) {
-				return sendSubscriptionToServer(subscription);
-			})
+serviceWorkerRegistration
+.pushManager
+.subscribe({
+	// Required parameter as receiving updates
+	// but not displaying a message is not supported everywhere.
+	userVisibleOnly: true
+})
+.then(function(subscription) {
+	return sendSubscriptionToServer(subscription);
+})
+		</code></pre>
 
 			The subscription is an object that looks like:
 
-			{
-				"endpoint": "http://example.com/some/uuid"
-			}
+		<pre><code class="language-json">
+{
+	"endpoint": "http://example.com/some/uuid"
+}
 		</code></pre>
 
 		<p>The uuid identifies the browser you are currently using.</p>
@@ -242,25 +244,19 @@
 		<p>**NB:** The service worker can be closed by the browser at any point. The event.waitUntil function in the push event will tell the service worker to not close until our event is finished.</p>
 
 		<pre><code class="language-javascript">
-		self.addEventListener('push', function(event) {
-			**event.waitUntil**(
+self.addEventListener('push', function(event) {
+	event.waitUntil(
 
 		// Makes api request, returns Promise
-			getMessageDetails()
-			.then(function (details) {
-				self.registration.showNotification(
-
-		details.title, {
-				body: details.message,
-				icon: '/my-app-logo-192x192.png'
+		getMessageDetails()
+		.then(function (details) {
+			self.registration.showNotification( details.title, {
+					body: details.message,
+					icon: '/my-app-logo-192x192.png'
 			})
-
-		);
 		})
-
-		);
-
-		});
+	);
+});
 		</code></pre>
 
         <p>You can listen for click/press on the notification events too. Use these to decide how to react. You can open new browser tabs, focus an existing tab or make api requests. You also choose whether to close the notification or keep it open. Use
