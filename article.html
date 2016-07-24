@@ -16,7 +16,9 @@
                 <a href="http://www.smashingmagazine.com/"><h1 class="logo">Smashing Magazine</h1></a>
             </div>
             <div class="table-cell text-right">
-                <h1>Author's Article Template</h1>
+
+
+		<h1>Author's Article Template</h1>
             </div>
         </div>
     </header>
@@ -27,9 +29,10 @@
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	START editing here
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-        <h2>Progressive Web Apps</h2>
 
-        <h3><a id="So_what_are_Web_Apps_4">So what are Web Apps?</a></h3>
+
+		<h2>Progressive Web Apps</h2>
+
         <p>A web app is a website; A website so good users will be unable to tell it is not a first class citizen on the device. The website has got to be so nice that the user wants to save it to their home screen where it will have an icon like a native
             app.
         </p>
@@ -59,7 +62,9 @@
             </li>
         </ul>
         <p>That truly is build once deploy anywhere.</p>
-        <h3><a id="But_its_not_in_an_App_Store_28">“But it’s not in an App Store”</a></h3>
+
+
+		<h3><a href="#But_its_not_in_an_App_Store_28" id="But_its_not_in_an_App_Store_28">“But it’s not in an App Store”</a></h3>
         <p>Some people get concerned with how the app will get exposure if not in the app store.</p>
         <p><img src="./images-in-article/graph-from-dazeend.png" alt="image alt text"></p>
         <p>Source: <a href="http://dazeend.org/2015/01/the-shape-of-the-app-store/">http://dazeend.org/2015/01/the-shape-of-the-app-store/</a></p>
@@ -69,7 +74,9 @@
             of their mind.</p>
         <video src="https://ada.is/progressive-web-apps-talk/images/save-to-homescreen.mp4" crossorigin="anonymous" controls=1></video>
         <p>Since 2011 (2013 on Chrome Android) mobile browsers have had the ability to bookmark a website to your phone’s home screen. Meta tags in the head would determine the appearance of the installed web page. This is the origins of Web Apps.</p>
-        <h3><a id="Background_and_Current_Climate_45">Background and Current Climate</a></h3>
+
+
+		<h3><a href="#Background_and_Current_Climate_45" id="Background_and_Current_Climate_45">Background and Current Climate</a></h3>
 
         <p>Chrome 38 introduced the Web App manifest, which is a JSON file that describes the installed app configuration of your Web App. Allowing us to remove the configuration out of the head.</p>
         <p>In Chrome 40 (December 2014) Service Workers started to be rolled out across Firefox and Chrome, nothing on Safari at the time of writing. Service workers simplify bringing the app offline and lay the foundation for future app-like features such
@@ -91,17 +98,28 @@
         <p>In this case progressive means it progressively becomes more app-like the more features the device supports.</p>
         <p>The prompt is currently shown under varying conditions across Opera, Chrome and the Samsung Browser.</p>
         <p>iOS has indicated interest in progressive web apps but at the time of writing still relies on metatags for web app configuration (and appcache for offline) .</p>
-        <h3><a id="At_what_point_does_a_website_become_a_Web_App_69">At what point does a website become a Web App?</a></h3>
-        <h3><a id="A_progressive_web_app_should_exhibit_certain_applike_properties_71">A progressive web app should exhibit certain app-like properties:</a></h3>
+
+
+		<h3><a href="#At_what_point_does_a_website_become_a_Web_App_69" id="At_what_point_does_a_website_become_a_Web_App_69">At what point does a website become a Web App?</a></h3>
+
+		We know what a website looks like and what an app looks like, but at what point does a website become a web app? There is no definitive metric as to what makes something a web app over a website.
+
+
+
+		<h4><a href="#A_progressive_web_app_should_exhibit_certain_applike_properties_71" id="A_progressive_web_app_should_exhibit_certain_applike_properties_71">A progressive web app should exhibit certain app-like properties:</a></h4>
         <p>📱💻 - Responsive - Perfectly filling the screen, These sites are primarily aimed at mobile and tablets and will need to respond to the plethora of screen sizes. They should also just work as desktop websites.</p>
         <p>✈ - Offline first - The app must be capable of starting offline and still display useful information.</p>
         <p>👉 - Touch capable - an interface designed for touch with Gesture interaction. User interaction must feel responsive and snappy. No delays between a touch and reaction.</p>
         <p>🐵 - It provides metadata to tell the browser how it should look when installed so you get a nice high resolution icon on the homescreen and a splash screen on some platforms.</p>
         <p>🔔 - Push Notifications (only if required) - The ability to receive notifications when the app is not running.</p>
-        <h3><a id="But_still_maintain_certain_weblike_properties_83">But still maintain certain web-like properties:</a></h3>
-        <p>**e **🍏 - Progressive - It’s ability to be installed is a progressive enhancement. It needs to still work as a normal website, especially on platforms which may not support installing or Service Workers yet.</p>
+
+
+		<h4><a href="#But_still_maintain_certain_weblike_properties_83" id="But_still_maintain_certain_weblike_properties_83">But still maintain certain web-like properties:</a></h4>
+        <p><b>e</b>🍏 - Progressive - It’s ability to be installed is a progressive enhancement. It needs to still work as a normal website, especially on platforms which may not support installing or Service Workers yet.</p>
         <p>https:// - On the open web - Not locked into any browser or app store. It should be able to be deep linked to and should provide methods of sharing the current url.</p>
-        <h3><a id="Taking_your_website_offline_89">Taking your website offline</a></h3>
+
+
+		<h3><a href="#Taking_your_website_offline_89" id="Taking_your_website_offline_89">Taking your website offline</a></h3>
         <p>Taking your website offline gives two main advantages, it works when the user is on a flakey network connection.</p>
         <p>The time from opening the app and using the app is greatly reduced if it is not reliant on the network. This provides a great experience. A carefully optimised web app can start faster than native if the browser has been used recently.</p>
         <p>There are two methods of getting a site to work offline:</p>
@@ -112,7 +130,9 @@
             to life in the background to handle push notifications or background sync. Also it is impossible to permanently break your website with it since it will automatically update when a new service worker script is detected.</p>
         <p>If you are building a new website from scratch start off with a Service Worker, if your website already works offline with AppCache then you can use the tool <a href="https://github.com/GoogleChrome/sw-helpers">sw-appcache-behavior</a> to generate
             a service worker from this as soon we may be in a state where some browsers will only accept service workers and some will only accept app cache…</p>
-        <h3><a id="Setting_up_a_Service_Worker_105">Setting up a Service Worker</a></h3>
+
+
+		<h3><a href="#Setting_up_a_Service_Worker_105" id="Setting_up_a_Service_Worker_105">Setting up a Service Worker</a></h3>
         <p>Also see: <a href="https://www.google.com/url?q=https://www.smashingmagazine.com/2016/02/making-a-service-worker/&amp;sa=D&amp;ust=1468180224105000&amp;usg=AFQjCNGzNkKFX0iNjGmqWcACXFZYXmBiHg">Setting up a service worker</a> for more detailed instructions.
         </p>
         <p>A Service Worker is a special type of Shared WebWorker. Being a worker it runs in a seperate thread to your main page. It is shared by all web pages in the same path as the service worker. E.g. A service worker located at /my-page/sw.js will be
@@ -126,12 +146,18 @@
         <p>Offlining usually involves picking certain caching methods for different parts of your site to allow them to be served faster or when there is no connection. I will discuss various caching methods.</p>
         <p>To abstract away complex caching logic I use the tool <a href="https://github.com/GoogleChrome/sw-toolbox">sw-toolbox</a>. This library can be set to handle the routing by providing four preconfigured routes which can be configured in a clean
             fashion. It can be imported into your service worker</p>
-        <h3><a id="importScriptsscriptsswtoolboxjs_124">importScripts(‘scripts/sw-toolbox.js’);</a></h3>
-        <h3><a id="_126"></a></h3>
-        <p>Usecase 1. Precaching</p>
+
+		<!-- importScripts(‘scripts/sw-toolbox.js’); -->
+
+
+
+		<h4><a href="#Usecase_1_Precaching_134" id="Usecase_1_Precaching_134">Usecase 1. Precaching</a></h4>
         <p>Precaching pulls down requests before your site works out they are needed. This can greatly increase first paint time because your site doesn’t need to parse ‘/site.css’ before it starts downloading your websites logo ‘/images/logo.png’.</p>
         <p>toolbox.precache([’/index.html’, ‘/site.css’, ‘/images/logo.png’]);</p>
-        <h3><a id="Usecase_2_Offline_134">Usecase 2. Offline</a></h3>
+
+
+
+		<h4><a href="#Usecase_2_Offline_134" id="Usecase_2_Offline_134">Usecase 2. Offline</a></h4>
         <p>Allow users to revisit your site when the user is offline in the simplest case this means falling back to the cache if the device is offline. It is important to set a timeout here because a flakey network, a misconfigured router or a captive portal
             could have the user waiting indefinitely.</p>
         <p>toolbox.router.default = toolbox.networkFirst;</p>
@@ -158,9 +184,13 @@
         </ul>
         <p>**NB! **The browser cache and the Cache API are different. Just because the Cache API has been bypassed in the case of network first or network only. The request may still hit the browser cache because the caching headers on the request say it
             is still valid. Problems with this may result in user’s receiving a mixture of cached and fresh data. Jake Archibald has some goodsuggestions for avoiding this issue here: <a href="https://jakearchibald.com/2016/caching-best-practices/">https://jakearchibald.com/2016/caching-best-practices/</a></p>
-        <h3><a id="Debugging_your_service_worker_163">Debugging your service worker:</a></h3>
+
+
+		<h4><a href="#Debugging_your_service_worker_163" id="Debugging_your_service_worker_163">Debugging your service worker:</a></h4>
         <p>if you are in Chrome go to: chrome://serviceworker-internals. This will allow you to inspect and pause and uninstall your service worker script.</p>
-        <h3><a id="Interaction_and_Animation_Performance_167">Interaction and Animation Performance</a></h3>
+
+
+		<h4><a href="#Interaction_and_Animation_Performance_167" id="Interaction_and_Animation_Performance_167">Interaction and Animation Performance</a></h4>
         <p>Users of the web have to expect that the web does not have smoothly animated interface the way native apps do. This is not acceptable for web apps. Web apps must animate smoothly less our users feel we are delivering a degraded, second class experience.
             We have three goals in order to ‘feel’ fast:</p>
         <ul>
@@ -194,7 +224,10 @@
             the whole page.</p>
         <p>If writing performant animations is a daunting task there are very many libraries out there which handle high performance animations for you. A favourite of mine is <a href="https://greensock.com/">Greensock</a> which as well as doing very fancy
             animations and tweening it can also handle touch interactions such as dragging items very nicely.</p>
-        <h3><a id="Push_Notifications_201">Push Notifications</a></h3>
+
+
+
+		<h3><a href="#Push_Notifications_201" id="Push_Notifications_201">Push Notifications</a></h3>
         <p>Push notifications are a great way to re-engage with your users. By prompting the user you bring your app to the forefront of mind. They can finish off an unfinished transaction or receive alerts about relevant new content.</p>
         <p>Make them relevant for synchronous and timely for events which <em>require</em> user action. E.g. Reply to person, go to event. Also don’t make a push notification if your web app is already visible or focused.</p>
         <p>Make sure your notification goes to a page which works offline. Notifications will hang around unread. They may be interacted with when the user has no network connection. Refusing to work when they have tried to interact with you will anger your
@@ -261,14 +294,20 @@ self.addEventListener('push', function(event) {
 
         <p>You can listen for click/press on the notification events too. Use these to decide how to react. You can open new browser tabs, focus an existing tab or make api requests. You also choose whether to close the notification or keep it open. Use
             this functionality with actions on the notification to build great functionality into the notification itself. Rather than requiring the user to have to open your app each time. This will be a great experience.</p>
-        <h3><a id="Dont_ignore_the_strengths_of_the_Web_277">Don’t ignore the strengths of the Web</a></h3>
+
+
+		<h3><a href="#Dont_ignore_the_strengths_of_the_Web_277" id="Dont_ignore_the_strengths_of_the_Web_277">Don’t ignore the strengths of the Web</a></h3>
         <p>My final and most important point is, in our rush for an app like experience we should not forget to stay web like in a very important aspect: URLs.</p>
         <p>An installed web app often will chose to hide the browser shell. So there will be no address bar for the user to share their current url nor can they save current page for later.</p>
         <p>Having URLs is a unique web advantage, you can get users to use your app via click rather than describing how to navigate an app. But it is very easy to forget to expose this to the users. You could write the best app in the world but you have
             done yourself a major disservice if no one can share it.</p>
         <p>Make sure you provide ways to share your app either via share buttons or a button to expose the url.</p>
 
-		<h4>Final Notes</h4>
+
+
+
+
+		<h3>Final Notes</h3>
 
 		Other writings on PWA:
 
@@ -283,6 +322,8 @@ self.addEventListener('push', function(event) {
 			<li><a href=http://developer.telerik.com/featured/300-ms-click-delay-ios-8/>http://developer.telerik.com/featured/300-ms-click-delay-ios-8/</a></li>
 			<li><a href=https://jakearchibald.com/2016/caching-best-practices/>https://jakearchibald.com/2016/caching-best-practices/</a></li>
 		</ul>
+
+
 
 		<h3>Author's Biography</h3>
 
