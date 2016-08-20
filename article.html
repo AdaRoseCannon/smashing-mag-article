@@ -61,13 +61,12 @@
 <p>That truly achieves ‘build once, deploy anywhere.’</p>
 <h3><a id="But_its_not_in_an_App_Store" href="#But_its_not_in_an_App_Store">“But it’s not in an App Store”</a></h3>
 <p>There are some good reasons why it is still standard practice for most major companies to have a native app that is supplemented by a website. Among these are concerns about browser support and the fact that most users are acclimated to using native apps. I will address these issues in more detail later. Not least of these concerns is how the app will get exposure if it is not in the app store.</p>
-<p><img src="images-in-article/graph-from-dazeend.png" alt="Graph from Daze End showing falloff in exposure with popularity"></p>
-<p>Source: <a href="http://dazeend.org/2015/01/the-shape-of-the-app-store/">http://dazeend.org/2015/01/the-shape-of-the-app-store/</a></p>
+<p><figure><img src="images-in-article/graph-from-dazeend.png" alt="Graph from Daze End showing falloff in exposure with popularity" title="Graph from Daze End showing falloff in exposure with popularity"><figcaption>As popularity decreases exposure in the store decreases exponentially. (Image source: <a href="http://dazeend.org/2015/01/the-shape-of-the-app-store/">http://dazeend.org/2015/01/the-shape-of-the-app-store/</a> <a href="image-credit-URL"></a>)</figcaption></figure></p>
 <p>I would argue that there is not a major advantage to being in the app store since it has been shown that if you are not in the top 0.1% of apps in the app store you are not getting significant benefit from the app store.</p>
 <p>User’s tend to find your apps by first finding your web site. If your website is a web app then they are already at their goal.</p>
 <p>One of the strengths of web apps is that they allow you to improve engagement by reducing the number of clicks required to re-engage the user between landing on your website and engaging with your app.</p>
 <p>By having the user ‘install’ your web app by adding it to their homescreen, they can continue engaging with your site. When they close down the web browser, the phone will show them where the web app is installed, bringing you back to the forefront of their mind.</p>
-<p><video src="https://ada.is/progressive-web-apps-talk/images/save-to-homescreen.mp4" crossorigin="anonymous" controls="1"></video></p>
+<p><figure><video src="https://ada.is/progressive-web-apps-talk/images/save-to-homescreen.mp4" crossorigin="anonymous" controls="1"></video><figcaption>Video of a web app being added to the homescreen, when the browser is minimised the icon is animated as it gets added. When the web app is loaded up again the url bar is hidden.</figcaption></figure></p>
 <h3><a id="Background_and_Current_Climate_50" href="#Background_and_Current_Climate_50">Background and Current Climate</a></h3>
 <p>Modern web apps are based around a new technology called Service Workers. Service Workers are a programmable proxy which sit between the user’s tab and the wider internet. They can intercept and rewrite or fabricate network requests to allow very granular caching and offline support.</p>
 <p>Since the origins of the web app in 2011, which enabled bookmarking websites to the home screen, a number of developments have taken place to lay more groundwork for the creation of <em>Progressive Web Apps</em>.</p>
@@ -155,11 +154,11 @@ toolbox.options.networkTimeoutSeconds = 5;</pre>
 <p>Infrequently updated assets such as images will be dispatched from cache first then and the browser will also try to update them. If ‘toolbox.cacheOnly’ was used then it could also save the user’s data.</p>
 </li>
 </ul>
-<p>**NB! **The browser cache and the Cache API are different animals. The Cache API has been bypassed in the case of network first or network only. The request may still hit the browser cache because the caching headers on the request say it is still valid. Problems with this may result in user receiving a mixture of cached and fresh data. Jake Archibald has some good suggestions for avoiding this issue here: <a href="https://jakearchibald.com/2016/caching-best-practices/">https://jakearchibald.com/2016/caching-best-practices/</a></p>
+<p><strong>NB!</strong> The browser cache and the Cache API are different animals. The Cache API has been bypassed in the case of network first or network only. The request may still hit the browser cache because the caching headers on the request say it is still valid. Problems with this may result in user receiving a mixture of cached and fresh data. Jake Archibald has some good suggestions for avoiding this issue here: <a href="https://jakearchibald.com/2016/caching-best-practices/">https://jakearchibald.com/2016/caching-best-practices/</a></p>
 <h4><a id="Debugging_your_service_worker_190" href="#Debugging_your_service_worker_190">Debugging your service worker:</a></h4>
 <p>If you are in Chrome or Opera go to: chrome://serviceworker-internals. This will allow you to inspect and pause and uninstall your service worker script.</p>
 <p>In recent versions of Chrome or Opera you can get detailed views and debugging tools through the application tab in the inspector</p>
-<p><img src="images-in-article/application-tab.png" /></p>
+<p><figure><img src="images-in-article/application-tab.png" title="The application tab in Chrome Devtools" alt="The application tab in Chrome Devtools" /><figcaption>The application tab in Chrome Devtools</figcaption></figure>	</p>
 <h3><a id="Interaction_and_Animation_Performance_194" href="#Interaction_and_Animation_Performance_194">Interaction and Animation Performance</a></h3>
 <p>Users of the web have come to expect that the web does not have smoothly animated interfaces the way native apps do. However, the same standard is not acceptable for web apps. Web apps must animate smoothly lest our users feel we are delivering a degraded, second class experience. We have three goals in order to make it ‘feel’ fast:</p>
 <ul>
@@ -180,7 +179,7 @@ toolbox.options.networkTimeoutSeconds = 5;</pre>
 </li>
 </ul>
 <p>Off the bat, the most essential item is this in the head of the document:</p>
-<p>&lt;meta name=“viewport” content=“width=device-width”&gt;</p>
+<pre>&lt;meta name=“viewport” content=“width=device-width”&gt;</pre>
 <p>This line will ensure that there is no 300ms tap delay on phone browsers which are Chromium based and Firefox browsers, but still allows the user to zoom in by pinching (great for accessibility.)</p>
 <p>Since iOS 8 came out,  clicks are fast by default but may seem slow if the tap was fast, according to <a href="http://developer.telerik.com/featured/300-ms-click-delay-ios-8/">certain heuristics</a>. If this is an issue for you I recommend using <a href="https://github.com/ftlabs/fastclick">FastClick</a> to remove the delay.</p>
 <p>There is also the issue of animation performance. You probably want to have lots of pretty animating in and out of elements as well as elements which can be dragged by the user or other lovely interactions.</p>
